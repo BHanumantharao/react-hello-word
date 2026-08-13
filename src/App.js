@@ -1,3 +1,4 @@
+/*
 import logo from './logo.svg';
 import './App.css';
 
@@ -20,6 +21,24 @@ function App() {
       </header>
     </div>
   );
+}
+
+export default App;
+*/
+
+import Header from './components/header/header.js';
+import Footer from './components/footer/footer.js';
+import Login from './components/Accounts/login.js';
+
+
+function App() {
+  return (
+      <>
+        <Header></Header>
+        <Login></Login>
+        <Footer></Footer>
+      </>
+  )
 }
 
 export default App;
