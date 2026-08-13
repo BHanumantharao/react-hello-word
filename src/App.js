@@ -29,13 +29,23 @@ export default App;
 import Header from './components/header/header.js';
 import Footer from './components/footer/footer.js';
 import Login from './components/Accounts/login.js';
+import AddTask from "./components/Tasks/addtask.js";
+import {useState} from "react";
 
 
 function App() {
+  const appTitle = "React Demo Application"
+  const [isLoggedIn, setLoggedIn] = useState(false);
+
+  const onLogin = () => {
+      setLoggedIn(true);
+  }
+
   return (
       <>
-        <Header></Header>
-        <Login></Login>
+        <Header appTitle={appTitle} isLoggedIn={isLoggedIn}></Header>
+        {/*<AddTask></AddTask>*/}
+        <Login isLoggedIn={isLoggedIn} loginMethod={onLogin}></Login>
         <Footer></Footer>
       </>
   )

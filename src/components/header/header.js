@@ -50,7 +50,7 @@ const Header = () => {
 
 export default Header;*/
 
-const Header = () => {
+const Header = (props) => {
     return (
         <Box sx={{ flexGrow: 1}}>
             <AppBar position="static" sx={{ color: "#ffffff", backgroundColor: "#1e3a8a" }}>
@@ -65,10 +65,9 @@ const Header = () => {
                         {/*<MenuIcon />*/}
                     </IconButton>
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                        HANU
+                        {props.appTitle}
                     </Typography>
-                    <Button color="inherit">Login</Button>
-                    <Button color="inherit">register</Button>
+                    {props.isLoggedIn ? <Button color="inherit">Logout</Button> : <Button color="inherit">Login</Button>}
                 </Toolbar>
             </AppBar>
         </Box>
